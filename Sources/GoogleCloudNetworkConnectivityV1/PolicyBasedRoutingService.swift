@@ -48,7 +48,7 @@ public class PolicyBasedRoutingServiceClient: Clients.PolicyBasedRoutingServiceP
   /// @Snippet(path: "PolicyBasedRoutingService_ListPolicyBasedRoutes")
   public func listPolicyBasedRoutes(
     request: ListPolicyBasedRoutesRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ListPolicyBasedRoutesResponse {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ListPolicyBasedRoutesResponse {
     try await self.inner.listPolicyBasedRoutes(request: request, options: options)
   }
 
@@ -60,7 +60,7 @@ public class PolicyBasedRoutingServiceClient: Clients.PolicyBasedRoutingServiceP
   ) throws -> any AsyncSequence<PolicyBasedRoute, Swift.Error> {
     let listRpc = {
       (token: Swift.String) async throws
-        -> GoogleCloudNetworkconnectivityV1.ListPolicyBasedRoutesResponse in
+        -> GoogleCloudNetworkConnectivityV1.ListPolicyBasedRoutesResponse in
       var request = byItem
       request.pageToken = token
       return try await self.listPolicyBasedRoutes(request: request, options: options)
@@ -73,7 +73,7 @@ public class PolicyBasedRoutingServiceClient: Clients.PolicyBasedRoutingServiceP
   /// @Snippet(path: "PolicyBasedRoutingService_GetPolicyBasedRoute")
   public func getPolicyBasedRoute(
     request: GetPolicyBasedRouteRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.PolicyBasedRoute {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.PolicyBasedRoute {
     try await self.inner.getPolicyBasedRoute(request: request, options: options)
   }
 
@@ -337,7 +337,7 @@ extension Clients {
   public protocol PolicyBasedRoutingServiceProtocol {
     /// See `PolicyBasedRoutingServiceClient.listPolicyBasedRoutes`.
     func listPolicyBasedRoutes(request: ListPolicyBasedRoutesRequest) async throws
-      -> GoogleCloudNetworkconnectivityV1.ListPolicyBasedRoutesResponse
+      -> GoogleCloudNetworkConnectivityV1.ListPolicyBasedRoutesResponse
 
     /// See `PolicyBasedRoutingServiceClient.listPolicyBasedRoutes`.
     func listPolicyBasedRoutes(
@@ -351,12 +351,12 @@ extension Clients {
 
     /// See `PolicyBasedRoutingServiceClient.getPolicyBasedRoute`.
     func getPolicyBasedRoute(request: GetPolicyBasedRouteRequest) async throws
-      -> GoogleCloudNetworkconnectivityV1.PolicyBasedRoute
+      -> GoogleCloudNetworkConnectivityV1.PolicyBasedRoute
 
     /// See `PolicyBasedRoutingServiceClient.getPolicyBasedRoute`.
     func getPolicyBasedRoute(
       name: Swift.String,
-    ) async throws -> GoogleCloudNetworkconnectivityV1.PolicyBasedRoute
+    ) async throws -> GoogleCloudNetworkConnectivityV1.PolicyBasedRoute
 
     /// See `PolicyBasedRoutingServiceClient.createPolicyBasedRoute`.
     func createPolicyBasedRoute(request: CreatePolicyBasedRouteRequest) async throws
@@ -443,7 +443,7 @@ extension Clients {
     /// See `PolicyBasedRoutingServiceClient.listPolicyBasedRoutes`.
     func listPolicyBasedRoutes(
       request: ListPolicyBasedRoutesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ListPolicyBasedRoutesResponse
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListPolicyBasedRoutesResponse
 
     /// See `PolicyBasedRoutingServiceClient.listPolicyBasedRoutes`.
     func listPolicyBasedRoutes(
@@ -453,7 +453,7 @@ extension Clients {
     /// See `PolicyBasedRoutingServiceClient.getPolicyBasedRoute`.
     func getPolicyBasedRoute(
       request: GetPolicyBasedRouteRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.PolicyBasedRoute
+    ) async throws -> GoogleCloudNetworkConnectivityV1.PolicyBasedRoute
 
     /// See `PolicyBasedRoutingServiceClient.createPolicyBasedRoute`.
     func createPolicyBasedRoute(
@@ -530,14 +530,14 @@ extension Clients {
 // Default implementations
 extension Clients.PolicyBasedRoutingServiceProtocol {
   public func listPolicyBasedRoutes(request: ListPolicyBasedRoutesRequest) async throws
-    -> GoogleCloudNetworkconnectivityV1.ListPolicyBasedRoutesResponse
+    -> GoogleCloudNetworkConnectivityV1.ListPolicyBasedRoutesResponse
   {
     try await self.listPolicyBasedRoutes(request: request, options: .init())
   }
 
   public func listPolicyBasedRoutes(
     request: ListPolicyBasedRoutesRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ListPolicyBasedRoutesResponse {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ListPolicyBasedRoutesResponse {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
@@ -552,7 +552,7 @@ extension Clients.PolicyBasedRoutingServiceProtocol {
   ) throws -> any AsyncSequence<PolicyBasedRoute, Swift.Error> {
     let listRpc = {
       (token: Swift.String) async throws
-        -> GoogleCloudNetworkconnectivityV1.ListPolicyBasedRoutesResponse in
+        -> GoogleCloudNetworkConnectivityV1.ListPolicyBasedRoutesResponse in
       throw GoogleCloudGax.RequestError.unimplemented
     }
     return GoogleCloudGax.PaginatedResponseSequence(listRpc: listRpc)
@@ -568,20 +568,20 @@ extension Clients.PolicyBasedRoutingServiceProtocol {
   }
 
   public func getPolicyBasedRoute(request: GetPolicyBasedRouteRequest) async throws
-    -> GoogleCloudNetworkconnectivityV1.PolicyBasedRoute
+    -> GoogleCloudNetworkConnectivityV1.PolicyBasedRoute
   {
     try await self.getPolicyBasedRoute(request: request, options: .init())
   }
 
   public func getPolicyBasedRoute(
     request: GetPolicyBasedRouteRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.PolicyBasedRoute {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.PolicyBasedRoute {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
   public func getPolicyBasedRoute(
     name: Swift.String,
-  ) async throws -> GoogleCloudNetworkconnectivityV1.PolicyBasedRoute {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.PolicyBasedRoute {
     let request = GetPolicyBasedRouteRequest().with {
       $0.name = name
     }

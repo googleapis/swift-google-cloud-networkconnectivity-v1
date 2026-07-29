@@ -54,14 +54,14 @@ extension Clients {
 
     public func listInternalRanges(
       request: ListInternalRangesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ListInternalRangesResponse {
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListInternalRangesResponse {
       try await self._intercept(
         request: request,
         options: options,
         idempotent: true,
         action: {
           (r: ListInternalRangesRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleCloudNetworkconnectivityV1.ListInternalRangesResponse
+            -> GoogleCloudNetworkConnectivityV1.ListInternalRangesResponse
           in
           return try await self.inner.listInternalRanges(request: r, options: o)
         })
@@ -69,14 +69,14 @@ extension Clients {
 
     public func getInternalRange(
       request: GetInternalRangeRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.InternalRange {
+    ) async throws -> GoogleCloudNetworkConnectivityV1.InternalRange {
       try await self._intercept(
         request: request,
         options: options,
         idempotent: true,
         action: {
           (r: GetInternalRangeRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleCloudNetworkconnectivityV1.InternalRange
+            -> GoogleCloudNetworkConnectivityV1.InternalRange
           in
           return try await self.inner.getInternalRange(request: r, options: o)
         })

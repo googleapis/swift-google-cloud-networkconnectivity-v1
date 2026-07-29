@@ -29,11 +29,11 @@ extension Clients {
   protocol InternalRangeServiceStub {
     func listInternalRanges(
       request: ListInternalRangesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ListInternalRangesResponse
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListInternalRangesResponse
 
     func getInternalRange(
       request: GetInternalRangeRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.InternalRange
+    ) async throws -> GoogleCloudNetworkConnectivityV1.InternalRange
 
     func createInternalRange(
       request: CreateInternalRangeRequest, options: GoogleCloudGax.RequestOptions
@@ -94,7 +94,7 @@ extension Clients {
 
     public func listInternalRanges(
       request: ListInternalRangesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ListInternalRangesResponse {
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListInternalRangesResponse {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
@@ -114,12 +114,12 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudNetworkconnectivityV1.ListInternalRangesResponse.self, from: data)
+        GoogleCloudNetworkConnectivityV1.ListInternalRangesResponse.self, from: data)
     }
 
     public func getInternalRange(
       request: GetInternalRangeRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.InternalRange {
+    ) async throws -> GoogleCloudNetworkConnectivityV1.InternalRange {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.name' is not set or is empty")
@@ -134,7 +134,7 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudNetworkconnectivityV1.InternalRange.self, from: data)
+        GoogleCloudNetworkConnectivityV1.InternalRange.self, from: data)
     }
 
     public func createInternalRange(

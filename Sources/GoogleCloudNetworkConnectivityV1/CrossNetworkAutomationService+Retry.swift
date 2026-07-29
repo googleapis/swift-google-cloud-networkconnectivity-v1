@@ -26,11 +26,13 @@ import GoogleRpc
 import GoogleCloudGax
 
 extension Clients {
-  final class DataTransferServiceRetry: DataTransferServiceStub {
-    let inner: any DataTransferServiceStub
+  final class CrossNetworkAutomationServiceRetry: CrossNetworkAutomationServiceStub {
+    let inner: any CrossNetworkAutomationServiceStub
     let options: GoogleCloudGax.ClientOptions
 
-    public init(_ inner: any DataTransferServiceStub, options: GoogleCloudGax.ClientOptions) {
+    public init(
+      _ inner: any CrossNetworkAutomationServiceStub, options: GoogleCloudGax.ClientOptions
+    ) {
       self.inner = inner
       self.options = options
     }
@@ -52,191 +54,273 @@ extension Clients {
       return try await loop.run(attempt: attempt)
     }
 
-    public func listMulticloudDataTransferConfigs(
-      request: ListMulticloudDataTransferConfigsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferConfigsResponse {
+    public func listServiceConnectionMaps(
+      request: ListServiceConnectionMapsRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionMapsResponse {
       try await self._intercept(
         request: request,
         options: options,
         idempotent: true,
         action: {
-          (r: ListMulticloudDataTransferConfigsRequest, o: GoogleCloudGax.RequestOptions)
-            async throws
-            -> GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferConfigsResponse
+          (r: ListServiceConnectionMapsRequest, o: GoogleCloudGax.RequestOptions) async throws
+            -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionMapsResponse
           in
-          return try await self.inner.listMulticloudDataTransferConfigs(request: r, options: o)
+          return try await self.inner.listServiceConnectionMaps(request: r, options: o)
         })
     }
 
-    public func getMulticloudDataTransferConfig(
-      request: GetMulticloudDataTransferConfigRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.MulticloudDataTransferConfig {
+    public func getServiceConnectionMap(
+      request: GetServiceConnectionMapRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceConnectionMap {
       try await self._intercept(
         request: request,
         options: options,
         idempotent: true,
         action: {
-          (r: GetMulticloudDataTransferConfigRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleCloudNetworkconnectivityV1.MulticloudDataTransferConfig
+          (r: GetServiceConnectionMapRequest, o: GoogleCloudGax.RequestOptions) async throws
+            -> GoogleCloudNetworkConnectivityV1.ServiceConnectionMap
           in
-          return try await self.inner.getMulticloudDataTransferConfig(request: r, options: o)
+          return try await self.inner.getServiceConnectionMap(request: r, options: o)
         })
     }
 
-    public func createMulticloudDataTransferConfig(
-      request: CreateMulticloudDataTransferConfigRequest, options: GoogleCloudGax.RequestOptions
+    public func createServiceConnectionMap(
+      request: CreateServiceConnectionMapRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation {
       try await self._intercept(
         request: request,
         options: options,
         idempotent: false,
         action: {
-          (r: CreateMulticloudDataTransferConfigRequest, o: GoogleCloudGax.RequestOptions)
-            async throws -> GoogleLongrunning.Operation
-          in
-          return try await self.inner.createMulticloudDataTransferConfig(request: r, options: o)
-        })
-    }
-
-    public func updateMulticloudDataTransferConfig(
-      request: UpdateMulticloudDataTransferConfigRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleLongrunning.Operation {
-      try await self._intercept(
-        request: request,
-        options: options,
-        idempotent: false,
-        action: {
-          (r: UpdateMulticloudDataTransferConfigRequest, o: GoogleCloudGax.RequestOptions)
-            async throws -> GoogleLongrunning.Operation
-          in
-          return try await self.inner.updateMulticloudDataTransferConfig(request: r, options: o)
-        })
-    }
-
-    public func deleteMulticloudDataTransferConfig(
-      request: DeleteMulticloudDataTransferConfigRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleLongrunning.Operation {
-      try await self._intercept(
-        request: request,
-        options: options,
-        idempotent: false,
-        action: {
-          (r: DeleteMulticloudDataTransferConfigRequest, o: GoogleCloudGax.RequestOptions)
-            async throws -> GoogleLongrunning.Operation
-          in
-          return try await self.inner.deleteMulticloudDataTransferConfig(request: r, options: o)
-        })
-    }
-
-    public func listDestinations(
-      request: ListDestinationsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ListDestinationsResponse {
-      try await self._intercept(
-        request: request,
-        options: options,
-        idempotent: true,
-        action: {
-          (r: ListDestinationsRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleCloudNetworkconnectivityV1.ListDestinationsResponse
-          in
-          return try await self.inner.listDestinations(request: r, options: o)
-        })
-    }
-
-    public func getDestination(
-      request: GetDestinationRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.Destination {
-      try await self._intercept(
-        request: request,
-        options: options,
-        idempotent: true,
-        action: {
-          (r: GetDestinationRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleCloudNetworkconnectivityV1.Destination
-          in
-          return try await self.inner.getDestination(request: r, options: o)
-        })
-    }
-
-    public func createDestination(
-      request: CreateDestinationRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleLongrunning.Operation {
-      try await self._intercept(
-        request: request,
-        options: options,
-        idempotent: false,
-        action: {
-          (r: CreateDestinationRequest, o: GoogleCloudGax.RequestOptions) async throws
+          (r: CreateServiceConnectionMapRequest, o: GoogleCloudGax.RequestOptions) async throws
             -> GoogleLongrunning.Operation
           in
-          return try await self.inner.createDestination(request: r, options: o)
+          return try await self.inner.createServiceConnectionMap(request: r, options: o)
         })
     }
 
-    public func updateDestination(
-      request: UpdateDestinationRequest, options: GoogleCloudGax.RequestOptions
+    public func updateServiceConnectionMap(
+      request: UpdateServiceConnectionMapRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation {
       try await self._intercept(
         request: request,
         options: options,
         idempotent: false,
         action: {
-          (r: UpdateDestinationRequest, o: GoogleCloudGax.RequestOptions) async throws
+          (r: UpdateServiceConnectionMapRequest, o: GoogleCloudGax.RequestOptions) async throws
             -> GoogleLongrunning.Operation
           in
-          return try await self.inner.updateDestination(request: r, options: o)
+          return try await self.inner.updateServiceConnectionMap(request: r, options: o)
         })
     }
 
-    public func deleteDestination(
-      request: DeleteDestinationRequest, options: GoogleCloudGax.RequestOptions
+    public func deleteServiceConnectionMap(
+      request: DeleteServiceConnectionMapRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation {
       try await self._intercept(
         request: request,
         options: options,
         idempotent: false,
         action: {
-          (r: DeleteDestinationRequest, o: GoogleCloudGax.RequestOptions) async throws
+          (r: DeleteServiceConnectionMapRequest, o: GoogleCloudGax.RequestOptions) async throws
             -> GoogleLongrunning.Operation
           in
-          return try await self.inner.deleteDestination(request: r, options: o)
+          return try await self.inner.deleteServiceConnectionMap(request: r, options: o)
         })
     }
 
-    public func getMulticloudDataTransferSupportedService(
-      request: GetMulticloudDataTransferSupportedServiceRequest,
-      options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.MulticloudDataTransferSupportedService {
+    public func listServiceConnectionPolicies(
+      request: ListServiceConnectionPoliciesRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionPoliciesResponse {
       try await self._intercept(
         request: request,
         options: options,
         idempotent: true,
         action: {
-          (r: GetMulticloudDataTransferSupportedServiceRequest, o: GoogleCloudGax.RequestOptions)
-            async throws -> GoogleCloudNetworkconnectivityV1.MulticloudDataTransferSupportedService
+          (r: ListServiceConnectionPoliciesRequest, o: GoogleCloudGax.RequestOptions) async throws
+            -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionPoliciesResponse
           in
-          return try await self.inner.getMulticloudDataTransferSupportedService(
-            request: r, options: o)
+          return try await self.inner.listServiceConnectionPolicies(request: r, options: o)
         })
     }
 
-    public func listMulticloudDataTransferSupportedServices(
-      request: ListMulticloudDataTransferSupportedServicesRequest,
-      options: GoogleCloudGax.RequestOptions
-    ) async throws
-      -> GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferSupportedServicesResponse
-    {
+    public func getServiceConnectionPolicy(
+      request: GetServiceConnectionPolicyRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceConnectionPolicy {
       try await self._intercept(
         request: request,
         options: options,
         idempotent: true,
         action: {
-          (r: ListMulticloudDataTransferSupportedServicesRequest, o: GoogleCloudGax.RequestOptions)
-            async throws
-            -> GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferSupportedServicesResponse
+          (r: GetServiceConnectionPolicyRequest, o: GoogleCloudGax.RequestOptions) async throws
+            -> GoogleCloudNetworkConnectivityV1.ServiceConnectionPolicy
           in
-          return try await self.inner.listMulticloudDataTransferSupportedServices(
-            request: r, options: o)
+          return try await self.inner.getServiceConnectionPolicy(request: r, options: o)
+        })
+    }
+
+    public func createServiceConnectionPolicy(
+      request: CreateServiceConnectionPolicyRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleLongrunning.Operation {
+      try await self._intercept(
+        request: request,
+        options: options,
+        idempotent: false,
+        action: {
+          (r: CreateServiceConnectionPolicyRequest, o: GoogleCloudGax.RequestOptions) async throws
+            -> GoogleLongrunning.Operation
+          in
+          return try await self.inner.createServiceConnectionPolicy(request: r, options: o)
+        })
+    }
+
+    public func updateServiceConnectionPolicy(
+      request: UpdateServiceConnectionPolicyRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleLongrunning.Operation {
+      try await self._intercept(
+        request: request,
+        options: options,
+        idempotent: false,
+        action: {
+          (r: UpdateServiceConnectionPolicyRequest, o: GoogleCloudGax.RequestOptions) async throws
+            -> GoogleLongrunning.Operation
+          in
+          return try await self.inner.updateServiceConnectionPolicy(request: r, options: o)
+        })
+    }
+
+    public func deleteServiceConnectionPolicy(
+      request: DeleteServiceConnectionPolicyRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleLongrunning.Operation {
+      try await self._intercept(
+        request: request,
+        options: options,
+        idempotent: false,
+        action: {
+          (r: DeleteServiceConnectionPolicyRequest, o: GoogleCloudGax.RequestOptions) async throws
+            -> GoogleLongrunning.Operation
+          in
+          return try await self.inner.deleteServiceConnectionPolicy(request: r, options: o)
+        })
+    }
+
+    public func listServiceClasses(
+      request: ListServiceClassesRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListServiceClassesResponse {
+      try await self._intercept(
+        request: request,
+        options: options,
+        idempotent: true,
+        action: {
+          (r: ListServiceClassesRequest, o: GoogleCloudGax.RequestOptions) async throws
+            -> GoogleCloudNetworkConnectivityV1.ListServiceClassesResponse
+          in
+          return try await self.inner.listServiceClasses(request: r, options: o)
+        })
+    }
+
+    public func getServiceClass(
+      request: GetServiceClassRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceClass {
+      try await self._intercept(
+        request: request,
+        options: options,
+        idempotent: true,
+        action: {
+          (r: GetServiceClassRequest, o: GoogleCloudGax.RequestOptions) async throws
+            -> GoogleCloudNetworkConnectivityV1.ServiceClass
+          in
+          return try await self.inner.getServiceClass(request: r, options: o)
+        })
+    }
+
+    public func updateServiceClass(
+      request: UpdateServiceClassRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleLongrunning.Operation {
+      try await self._intercept(
+        request: request,
+        options: options,
+        idempotent: false,
+        action: {
+          (r: UpdateServiceClassRequest, o: GoogleCloudGax.RequestOptions) async throws
+            -> GoogleLongrunning.Operation
+          in
+          return try await self.inner.updateServiceClass(request: r, options: o)
+        })
+    }
+
+    public func deleteServiceClass(
+      request: DeleteServiceClassRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleLongrunning.Operation {
+      try await self._intercept(
+        request: request,
+        options: options,
+        idempotent: false,
+        action: {
+          (r: DeleteServiceClassRequest, o: GoogleCloudGax.RequestOptions) async throws
+            -> GoogleLongrunning.Operation
+          in
+          return try await self.inner.deleteServiceClass(request: r, options: o)
+        })
+    }
+
+    public func getServiceConnectionToken(
+      request: GetServiceConnectionTokenRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceConnectionToken {
+      try await self._intercept(
+        request: request,
+        options: options,
+        idempotent: true,
+        action: {
+          (r: GetServiceConnectionTokenRequest, o: GoogleCloudGax.RequestOptions) async throws
+            -> GoogleCloudNetworkConnectivityV1.ServiceConnectionToken
+          in
+          return try await self.inner.getServiceConnectionToken(request: r, options: o)
+        })
+    }
+
+    public func listServiceConnectionTokens(
+      request: ListServiceConnectionTokensRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionTokensResponse {
+      try await self._intercept(
+        request: request,
+        options: options,
+        idempotent: true,
+        action: {
+          (r: ListServiceConnectionTokensRequest, o: GoogleCloudGax.RequestOptions) async throws
+            -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionTokensResponse
+          in
+          return try await self.inner.listServiceConnectionTokens(request: r, options: o)
+        })
+    }
+
+    public func createServiceConnectionToken(
+      request: CreateServiceConnectionTokenRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleLongrunning.Operation {
+      try await self._intercept(
+        request: request,
+        options: options,
+        idempotent: false,
+        action: {
+          (r: CreateServiceConnectionTokenRequest, o: GoogleCloudGax.RequestOptions) async throws
+            -> GoogleLongrunning.Operation
+          in
+          return try await self.inner.createServiceConnectionToken(request: r, options: o)
+        })
+    }
+
+    public func deleteServiceConnectionToken(
+      request: DeleteServiceConnectionTokenRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleLongrunning.Operation {
+      try await self._intercept(
+        request: request,
+        options: options,
+        idempotent: false,
+        action: {
+          (r: DeleteServiceConnectionTokenRequest, o: GoogleCloudGax.RequestOptions) async throws
+            -> GoogleLongrunning.Operation
+          in
+          return try await self.inner.deleteServiceConnectionToken(request: r, options: o)
         })
     }
 

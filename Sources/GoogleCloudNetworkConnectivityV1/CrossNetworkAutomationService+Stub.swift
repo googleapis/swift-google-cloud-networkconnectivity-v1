@@ -26,57 +26,78 @@ import GoogleRpc
 import GoogleCloudGax
 
 extension Clients {
-  protocol DataTransferServiceStub {
-    func listMulticloudDataTransferConfigs(
-      request: ListMulticloudDataTransferConfigsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferConfigsResponse
+  protocol CrossNetworkAutomationServiceStub {
+    func listServiceConnectionMaps(
+      request: ListServiceConnectionMapsRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionMapsResponse
 
-    func getMulticloudDataTransferConfig(
-      request: GetMulticloudDataTransferConfigRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.MulticloudDataTransferConfig
+    func getServiceConnectionMap(
+      request: GetServiceConnectionMapRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceConnectionMap
 
-    func createMulticloudDataTransferConfig(
-      request: CreateMulticloudDataTransferConfigRequest, options: GoogleCloudGax.RequestOptions
+    func createServiceConnectionMap(
+      request: CreateServiceConnectionMapRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation
 
-    func updateMulticloudDataTransferConfig(
-      request: UpdateMulticloudDataTransferConfigRequest, options: GoogleCloudGax.RequestOptions
+    func updateServiceConnectionMap(
+      request: UpdateServiceConnectionMapRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation
 
-    func deleteMulticloudDataTransferConfig(
-      request: DeleteMulticloudDataTransferConfigRequest, options: GoogleCloudGax.RequestOptions
+    func deleteServiceConnectionMap(
+      request: DeleteServiceConnectionMapRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation
 
-    func listDestinations(
-      request: ListDestinationsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ListDestinationsResponse
+    func listServiceConnectionPolicies(
+      request: ListServiceConnectionPoliciesRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionPoliciesResponse
 
-    func getDestination(
-      request: GetDestinationRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.Destination
+    func getServiceConnectionPolicy(
+      request: GetServiceConnectionPolicyRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceConnectionPolicy
 
-    func createDestination(
-      request: CreateDestinationRequest, options: GoogleCloudGax.RequestOptions
+    func createServiceConnectionPolicy(
+      request: CreateServiceConnectionPolicyRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation
 
-    func updateDestination(
-      request: UpdateDestinationRequest, options: GoogleCloudGax.RequestOptions
+    func updateServiceConnectionPolicy(
+      request: UpdateServiceConnectionPolicyRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation
 
-    func deleteDestination(
-      request: DeleteDestinationRequest, options: GoogleCloudGax.RequestOptions
+    func deleteServiceConnectionPolicy(
+      request: DeleteServiceConnectionPolicyRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation
 
-    func getMulticloudDataTransferSupportedService(
-      request: GetMulticloudDataTransferSupportedServiceRequest,
-      options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.MulticloudDataTransferSupportedService
+    func listServiceClasses(
+      request: ListServiceClassesRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListServiceClassesResponse
 
-    func listMulticloudDataTransferSupportedServices(
-      request: ListMulticloudDataTransferSupportedServicesRequest,
-      options: GoogleCloudGax.RequestOptions
-    ) async throws
-      -> GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferSupportedServicesResponse
+    func getServiceClass(
+      request: GetServiceClassRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceClass
+
+    func updateServiceClass(
+      request: UpdateServiceClassRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleLongrunning.Operation
+
+    func deleteServiceClass(
+      request: DeleteServiceClassRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleLongrunning.Operation
+
+    func getServiceConnectionToken(
+      request: GetServiceConnectionTokenRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceConnectionToken
+
+    func listServiceConnectionTokens(
+      request: ListServiceConnectionTokensRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionTokensResponse
+
+    func createServiceConnectionToken(
+      request: CreateServiceConnectionTokenRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleLongrunning.Operation
+
+    func deleteServiceConnectionToken(
+      request: DeleteServiceConnectionTokenRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleLongrunning.Operation
 
     func listLocations(
       request: GoogleCloudLocation.ListLocationsRequest, options: GoogleCloudGax.RequestOptions
@@ -115,7 +136,7 @@ extension Clients {
     ) async throws
   }
 
-  class DataTransferServiceTransport: DataTransferServiceStub {
+  class CrossNetworkAutomationServiceTransport: CrossNetworkAutomationServiceStub {
     let inner: GoogleCloudGax.HTTPClient
 
     public init(_ options: GoogleCloudGax.ClientOptions = .init()) throws {
@@ -123,14 +144,14 @@ extension Clients {
         from: options, withDefaultEndpoint: "https://networkconnectivity.googleapis.com")
     }
 
-    public func listMulticloudDataTransferConfigs(
-      request: ListMulticloudDataTransferConfigsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferConfigsResponse {
+    public func listServiceConnectionMaps(
+      request: ListServiceConnectionMapsRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionMapsResponse {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
         }
-        return "/v1/\(pathVariable0)/multicloudDataTransferConfigs"
+        return "/v1/\(pathVariable0)/serviceConnectionMaps"
       }()
       var query = [
         URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
@@ -140,20 +161,17 @@ extension Clients {
       query.append(contentsOf: try encoder.encode(request.pageToken, prefix: "pageToken"))
       query.append(contentsOf: try encoder.encode(request.filter, prefix: "filter"))
       query.append(contentsOf: try encoder.encode(request.orderBy, prefix: "orderBy"))
-      query.append(
-        contentsOf: try encoder.encode(request.returnPartialSuccess, prefix: "returnPartialSuccess")
-      )
       var req = try await self.inner.Request(path: path, query: query)
       req.httpMethod = "GET"
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferConfigsResponse.self, from: data)
+        GoogleCloudNetworkConnectivityV1.ListServiceConnectionMapsResponse.self, from: data)
     }
 
-    public func getMulticloudDataTransferConfig(
-      request: GetMulticloudDataTransferConfigRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.MulticloudDataTransferConfig {
+    public func getServiceConnectionMap(
+      request: GetServiceConnectionMapRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceConnectionMap {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.name' is not set or is empty")
@@ -168,17 +186,17 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudNetworkconnectivityV1.MulticloudDataTransferConfig.self, from: data)
+        GoogleCloudNetworkConnectivityV1.ServiceConnectionMap.self, from: data)
     }
 
-    public func createMulticloudDataTransferConfig(
-      request: CreateMulticloudDataTransferConfigRequest, options: GoogleCloudGax.RequestOptions
+    public func createServiceConnectionMap(
+      request: CreateServiceConnectionMapRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
         }
-        return "/v1/\(pathVariable0)/multicloudDataTransferConfigs"
+        return "/v1/\(pathVariable0)/serviceConnectionMaps"
       }()
       var query = [
         URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
@@ -186,12 +204,12 @@ extension Clients {
       let encoder = GoogleCloudGax.QueryParameterEncoder()
       query.append(
         contentsOf: try encoder.encode(
-          request.multicloudDataTransferConfigId, prefix: "multicloudDataTransferConfigId"))
+          request.serviceConnectionMapId, prefix: "serviceConnectionMapId"))
       query.append(contentsOf: try encoder.encode(request.requestId, prefix: "requestId"))
       var req = try await self.inner.Request(path: path, query: query)
       req.httpMethod = "POST"
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
-      if let body = request.multicloudDataTransferConfig {
+      if let body = request.serviceConnectionMap {
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
         req.httpBody = try JSONEncoder().encode(body)
       }
@@ -200,15 +218,15 @@ extension Clients {
         GoogleLongrunning.Operation.self, from: data)
     }
 
-    public func updateMulticloudDataTransferConfig(
-      request: UpdateMulticloudDataTransferConfigRequest, options: GoogleCloudGax.RequestOptions
+    public func updateServiceConnectionMap(
+      request: UpdateServiceConnectionMapRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation {
       let path = try { () throws -> Swift.String in
-        guard let pathVariable0 = request.multicloudDataTransferConfig.map({ $0.name }),
+        guard let pathVariable0 = request.serviceConnectionMap.map({ $0.name }),
           !pathVariable0.isEmpty
         else {
           throw GoogleCloudGax.RequestError.binding(
-            "'request.multicloud_data_transfer_config.name' is not set or is empty")
+            "'request.service_connection_map.name' is not set or is empty")
         }
         return "/v1/\(pathVariable0)"
       }()
@@ -221,7 +239,7 @@ extension Clients {
       var req = try await self.inner.Request(path: path, query: query)
       req.httpMethod = "PATCH"
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
-      if let body = request.multicloudDataTransferConfig {
+      if let body = request.serviceConnectionMap {
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
         req.httpBody = try JSONEncoder().encode(body)
       }
@@ -230,8 +248,8 @@ extension Clients {
         GoogleLongrunning.Operation.self, from: data)
     }
 
-    public func deleteMulticloudDataTransferConfig(
-      request: DeleteMulticloudDataTransferConfigRequest, options: GoogleCloudGax.RequestOptions
+    public func deleteServiceConnectionMap(
+      request: DeleteServiceConnectionMapRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
@@ -253,14 +271,14 @@ extension Clients {
         GoogleLongrunning.Operation.self, from: data)
     }
 
-    public func listDestinations(
-      request: ListDestinationsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ListDestinationsResponse {
+    public func listServiceConnectionPolicies(
+      request: ListServiceConnectionPoliciesRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionPoliciesResponse {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
         }
-        return "/v1/\(pathVariable0)/destinations"
+        return "/v1/\(pathVariable0)/serviceConnectionPolicies"
       }()
       var query = [
         URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
@@ -270,20 +288,17 @@ extension Clients {
       query.append(contentsOf: try encoder.encode(request.pageToken, prefix: "pageToken"))
       query.append(contentsOf: try encoder.encode(request.filter, prefix: "filter"))
       query.append(contentsOf: try encoder.encode(request.orderBy, prefix: "orderBy"))
-      query.append(
-        contentsOf: try encoder.encode(request.returnPartialSuccess, prefix: "returnPartialSuccess")
-      )
       var req = try await self.inner.Request(path: path, query: query)
       req.httpMethod = "GET"
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudNetworkconnectivityV1.ListDestinationsResponse.self, from: data)
+        GoogleCloudNetworkConnectivityV1.ListServiceConnectionPoliciesResponse.self, from: data)
     }
 
-    public func getDestination(
-      request: GetDestinationRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.Destination {
+    public func getServiceConnectionPolicy(
+      request: GetServiceConnectionPolicyRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceConnectionPolicy {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.name' is not set or is empty")
@@ -298,28 +313,30 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudNetworkconnectivityV1.Destination.self, from: data)
+        GoogleCloudNetworkConnectivityV1.ServiceConnectionPolicy.self, from: data)
     }
 
-    public func createDestination(
-      request: CreateDestinationRequest, options: GoogleCloudGax.RequestOptions
+    public func createServiceConnectionPolicy(
+      request: CreateServiceConnectionPolicyRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
         }
-        return "/v1/\(pathVariable0)/destinations"
+        return "/v1/\(pathVariable0)/serviceConnectionPolicies"
       }()
       var query = [
         URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
       ]
       let encoder = GoogleCloudGax.QueryParameterEncoder()
-      query.append(contentsOf: try encoder.encode(request.destinationId, prefix: "destinationId"))
+      query.append(
+        contentsOf: try encoder.encode(
+          request.serviceConnectionPolicyId, prefix: "serviceConnectionPolicyId"))
       query.append(contentsOf: try encoder.encode(request.requestId, prefix: "requestId"))
       var req = try await self.inner.Request(path: path, query: query)
       req.httpMethod = "POST"
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
-      if let body = request.destination {
+      if let body = request.serviceConnectionPolicy {
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
         req.httpBody = try JSONEncoder().encode(body)
       }
@@ -328,14 +345,15 @@ extension Clients {
         GoogleLongrunning.Operation.self, from: data)
     }
 
-    public func updateDestination(
-      request: UpdateDestinationRequest, options: GoogleCloudGax.RequestOptions
+    public func updateServiceConnectionPolicy(
+      request: UpdateServiceConnectionPolicyRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation {
       let path = try { () throws -> Swift.String in
-        guard let pathVariable0 = request.destination.map({ $0.name }), !pathVariable0.isEmpty
+        guard let pathVariable0 = request.serviceConnectionPolicy.map({ $0.name }),
+          !pathVariable0.isEmpty
         else {
           throw GoogleCloudGax.RequestError.binding(
-            "'request.destination.name' is not set or is empty")
+            "'request.service_connection_policy.name' is not set or is empty")
         }
         return "/v1/\(pathVariable0)"
       }()
@@ -348,7 +366,7 @@ extension Clients {
       var req = try await self.inner.Request(path: path, query: query)
       req.httpMethod = "PATCH"
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
-      if let body = request.destination {
+      if let body = request.serviceConnectionPolicy {
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
         req.httpBody = try JSONEncoder().encode(body)
       }
@@ -357,8 +375,8 @@ extension Clients {
         GoogleLongrunning.Operation.self, from: data)
     }
 
-    public func deleteDestination(
-      request: DeleteDestinationRequest, options: GoogleCloudGax.RequestOptions
+    public func deleteServiceConnectionPolicy(
+      request: DeleteServiceConnectionPolicyRequest, options: GoogleCloudGax.RequestOptions
     ) async throws -> GoogleLongrunning.Operation {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
@@ -380,10 +398,34 @@ extension Clients {
         GoogleLongrunning.Operation.self, from: data)
     }
 
-    public func getMulticloudDataTransferSupportedService(
-      request: GetMulticloudDataTransferSupportedServiceRequest,
-      options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.MulticloudDataTransferSupportedService {
+    public func listServiceClasses(
+      request: ListServiceClassesRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListServiceClassesResponse {
+      let path = try { () throws -> Swift.String in
+        guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
+          throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
+        }
+        return "/v1/\(pathVariable0)/serviceClasses"
+      }()
+      var query = [
+        URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
+      ]
+      let encoder = GoogleCloudGax.QueryParameterEncoder()
+      query.append(contentsOf: try encoder.encode(request.pageSize, prefix: "pageSize"))
+      query.append(contentsOf: try encoder.encode(request.pageToken, prefix: "pageToken"))
+      query.append(contentsOf: try encoder.encode(request.filter, prefix: "filter"))
+      query.append(contentsOf: try encoder.encode(request.orderBy, prefix: "orderBy"))
+      var req = try await self.inner.Request(path: path, query: query)
+      req.httpMethod = "GET"
+      req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
+      let (data, _) = try await self.inner.rpc(for: req).get()
+      return try GoogleCloudWkt._ProtoJSONDecoder().decode(
+        GoogleCloudNetworkConnectivityV1.ListServiceClassesResponse.self, from: data)
+    }
+
+    public func getServiceClass(
+      request: GetServiceClassRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceClass {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.name' is not set or is empty")
@@ -398,20 +440,89 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudNetworkconnectivityV1.MulticloudDataTransferSupportedService.self, from: data)
+        GoogleCloudNetworkConnectivityV1.ServiceClass.self, from: data)
     }
 
-    public func listMulticloudDataTransferSupportedServices(
-      request: ListMulticloudDataTransferSupportedServicesRequest,
-      options: GoogleCloudGax.RequestOptions
-    ) async throws
-      -> GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferSupportedServicesResponse
-    {
+    public func updateServiceClass(
+      request: UpdateServiceClassRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleLongrunning.Operation {
+      let path = try { () throws -> Swift.String in
+        guard let pathVariable0 = request.serviceClass.map({ $0.name }), !pathVariable0.isEmpty
+        else {
+          throw GoogleCloudGax.RequestError.binding(
+            "'request.service_class.name' is not set or is empty")
+        }
+        return "/v1/\(pathVariable0)"
+      }()
+      var query = [
+        URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
+      ]
+      let encoder = GoogleCloudGax.QueryParameterEncoder()
+      query.append(contentsOf: try encoder.encode(request.updateMask, prefix: "updateMask"))
+      query.append(contentsOf: try encoder.encode(request.requestId, prefix: "requestId"))
+      var req = try await self.inner.Request(path: path, query: query)
+      req.httpMethod = "PATCH"
+      req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
+      if let body = request.serviceClass {
+        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        req.httpBody = try JSONEncoder().encode(body)
+      }
+      let (data, _) = try await self.inner.rpc(for: req).get()
+      return try GoogleCloudWkt._ProtoJSONDecoder().decode(
+        GoogleLongrunning.Operation.self, from: data)
+    }
+
+    public func deleteServiceClass(
+      request: DeleteServiceClassRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleLongrunning.Operation {
+      let path = try { () throws -> Swift.String in
+        guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
+          throw GoogleCloudGax.RequestError.binding("'request.name' is not set or is empty")
+        }
+        return "/v1/\(pathVariable0)"
+      }()
+      var query = [
+        URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
+      ]
+      let encoder = GoogleCloudGax.QueryParameterEncoder()
+      query.append(contentsOf: try encoder.encode(request.requestId, prefix: "requestId"))
+      query.append(contentsOf: try encoder.encode(request.etag, prefix: "etag"))
+      var req = try await self.inner.Request(path: path, query: query)
+      req.httpMethod = "DELETE"
+      req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
+      let (data, _) = try await self.inner.rpc(for: req).get()
+      return try GoogleCloudWkt._ProtoJSONDecoder().decode(
+        GoogleLongrunning.Operation.self, from: data)
+    }
+
+    public func getServiceConnectionToken(
+      request: GetServiceConnectionTokenRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceConnectionToken {
+      let path = try { () throws -> Swift.String in
+        guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
+          throw GoogleCloudGax.RequestError.binding("'request.name' is not set or is empty")
+        }
+        return "/v1/\(pathVariable0)"
+      }()
+      let query = [
+        URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
+      ]
+      var req = try await self.inner.Request(path: path, query: query)
+      req.httpMethod = "GET"
+      req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
+      let (data, _) = try await self.inner.rpc(for: req).get()
+      return try GoogleCloudWkt._ProtoJSONDecoder().decode(
+        GoogleCloudNetworkConnectivityV1.ServiceConnectionToken.self, from: data)
+    }
+
+    public func listServiceConnectionTokens(
+      request: ListServiceConnectionTokensRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionTokensResponse {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
         }
-        return "/v1/\(pathVariable0)/multicloudDataTransferSupportedServices"
+        return "/v1/\(pathVariable0)/serviceConnectionTokens"
       }()
       var query = [
         URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
@@ -419,13 +530,66 @@ extension Clients {
       let encoder = GoogleCloudGax.QueryParameterEncoder()
       query.append(contentsOf: try encoder.encode(request.pageSize, prefix: "pageSize"))
       query.append(contentsOf: try encoder.encode(request.pageToken, prefix: "pageToken"))
+      query.append(contentsOf: try encoder.encode(request.filter, prefix: "filter"))
+      query.append(contentsOf: try encoder.encode(request.orderBy, prefix: "orderBy"))
       var req = try await self.inner.Request(path: path, query: query)
       req.httpMethod = "GET"
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferSupportedServicesResponse.self,
-        from: data)
+        GoogleCloudNetworkConnectivityV1.ListServiceConnectionTokensResponse.self, from: data)
+    }
+
+    public func createServiceConnectionToken(
+      request: CreateServiceConnectionTokenRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleLongrunning.Operation {
+      let path = try { () throws -> Swift.String in
+        guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
+          throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
+        }
+        return "/v1/\(pathVariable0)/serviceConnectionTokens"
+      }()
+      var query = [
+        URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
+      ]
+      let encoder = GoogleCloudGax.QueryParameterEncoder()
+      query.append(
+        contentsOf: try encoder.encode(
+          request.serviceConnectionTokenId, prefix: "serviceConnectionTokenId"))
+      query.append(contentsOf: try encoder.encode(request.requestId, prefix: "requestId"))
+      var req = try await self.inner.Request(path: path, query: query)
+      req.httpMethod = "POST"
+      req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
+      if let body = request.serviceConnectionToken {
+        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        req.httpBody = try JSONEncoder().encode(body)
+      }
+      let (data, _) = try await self.inner.rpc(for: req).get()
+      return try GoogleCloudWkt._ProtoJSONDecoder().decode(
+        GoogleLongrunning.Operation.self, from: data)
+    }
+
+    public func deleteServiceConnectionToken(
+      request: DeleteServiceConnectionTokenRequest, options: GoogleCloudGax.RequestOptions
+    ) async throws -> GoogleLongrunning.Operation {
+      let path = try { () throws -> Swift.String in
+        guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
+          throw GoogleCloudGax.RequestError.binding("'request.name' is not set or is empty")
+        }
+        return "/v1/\(pathVariable0)"
+      }()
+      var query = [
+        URLQueryItem(name: "$alt", value: "json;enum-encoding=int")
+      ]
+      let encoder = GoogleCloudGax.QueryParameterEncoder()
+      query.append(contentsOf: try encoder.encode(request.requestId, prefix: "requestId"))
+      query.append(contentsOf: try encoder.encode(request.etag, prefix: "etag"))
+      var req = try await self.inner.Request(path: path, query: query)
+      req.httpMethod = "DELETE"
+      req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
+      let (data, _) = try await self.inner.rpc(for: req).get()
+      return try GoogleCloudWkt._ProtoJSONDecoder().decode(
+        GoogleLongrunning.Operation.self, from: data)
     }
 
     public func listLocations(

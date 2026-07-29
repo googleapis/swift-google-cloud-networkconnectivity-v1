@@ -62,7 +62,7 @@ extension Clients {
 
     public func listMulticloudDataTransferConfigs(
       request: ListMulticloudDataTransferConfigsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferConfigsResponse {
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListMulticloudDataTransferConfigsResponse {
       try await self._intercept(
         request: request,
         options: options,
@@ -70,7 +70,7 @@ extension Clients {
         action: {
           (r: ListMulticloudDataTransferConfigsRequest, o: GoogleCloudGax.RequestOptions)
             async throws
-            -> GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferConfigsResponse
+            -> GoogleCloudNetworkConnectivityV1.ListMulticloudDataTransferConfigsResponse
           in
           return try await self.inner.listMulticloudDataTransferConfigs(request: r, options: o)
         })
@@ -78,14 +78,14 @@ extension Clients {
 
     public func getMulticloudDataTransferConfig(
       request: GetMulticloudDataTransferConfigRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.MulticloudDataTransferConfig {
+    ) async throws -> GoogleCloudNetworkConnectivityV1.MulticloudDataTransferConfig {
       try await self._intercept(
         request: request,
         options: options,
         name: "getMulticloudDataTransferConfig",
         action: {
           (r: GetMulticloudDataTransferConfigRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleCloudNetworkconnectivityV1.MulticloudDataTransferConfig
+            -> GoogleCloudNetworkConnectivityV1.MulticloudDataTransferConfig
           in
           return try await self.inner.getMulticloudDataTransferConfig(request: r, options: o)
         })
@@ -138,14 +138,14 @@ extension Clients {
 
     public func listDestinations(
       request: ListDestinationsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ListDestinationsResponse {
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListDestinationsResponse {
       try await self._intercept(
         request: request,
         options: options,
         name: "listDestinations",
         action: {
           (r: ListDestinationsRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleCloudNetworkconnectivityV1.ListDestinationsResponse
+            -> GoogleCloudNetworkConnectivityV1.ListDestinationsResponse
           in
           return try await self.inner.listDestinations(request: r, options: o)
         })
@@ -153,14 +153,14 @@ extension Clients {
 
     public func getDestination(
       request: GetDestinationRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.Destination {
+    ) async throws -> GoogleCloudNetworkConnectivityV1.Destination {
       try await self._intercept(
         request: request,
         options: options,
         name: "getDestination",
         action: {
           (r: GetDestinationRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleCloudNetworkconnectivityV1.Destination
+            -> GoogleCloudNetworkConnectivityV1.Destination
           in
           return try await self.inner.getDestination(request: r, options: o)
         })
@@ -214,14 +214,14 @@ extension Clients {
     public func getMulticloudDataTransferSupportedService(
       request: GetMulticloudDataTransferSupportedServiceRequest,
       options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.MulticloudDataTransferSupportedService {
+    ) async throws -> GoogleCloudNetworkConnectivityV1.MulticloudDataTransferSupportedService {
       try await self._intercept(
         request: request,
         options: options,
         name: "getMulticloudDataTransferSupportedService",
         action: {
           (r: GetMulticloudDataTransferSupportedServiceRequest, o: GoogleCloudGax.RequestOptions)
-            async throws -> GoogleCloudNetworkconnectivityV1.MulticloudDataTransferSupportedService
+            async throws -> GoogleCloudNetworkConnectivityV1.MulticloudDataTransferSupportedService
           in
           return try await self.inner.getMulticloudDataTransferSupportedService(
             request: r, options: o)
@@ -232,7 +232,7 @@ extension Clients {
       request: ListMulticloudDataTransferSupportedServicesRequest,
       options: GoogleCloudGax.RequestOptions
     ) async throws
-      -> GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferSupportedServicesResponse
+      -> GoogleCloudNetworkConnectivityV1.ListMulticloudDataTransferSupportedServicesResponse
     {
       try await self._intercept(
         request: request,
@@ -241,7 +241,7 @@ extension Clients {
         action: {
           (r: ListMulticloudDataTransferSupportedServicesRequest, o: GoogleCloudGax.RequestOptions)
             async throws
-            -> GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferSupportedServicesResponse
+            -> GoogleCloudNetworkConnectivityV1.ListMulticloudDataTransferSupportedServicesResponse
           in
           return try await self.inner.listMulticloudDataTransferSupportedServices(
             request: r, options: o)

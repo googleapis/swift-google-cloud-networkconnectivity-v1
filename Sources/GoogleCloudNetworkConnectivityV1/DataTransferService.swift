@@ -48,7 +48,7 @@ public class DataTransferServiceClient: Clients.DataTransferServiceProtocol {
   /// @Snippet(path: "DataTransferService_ListMulticloudDataTransferConfigs")
   public func listMulticloudDataTransferConfigs(
     request: ListMulticloudDataTransferConfigsRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferConfigsResponse {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ListMulticloudDataTransferConfigsResponse {
     try await self.inner.listMulticloudDataTransferConfigs(request: request, options: options)
   }
 
@@ -61,7 +61,7 @@ public class DataTransferServiceClient: Clients.DataTransferServiceProtocol {
   ) throws -> any AsyncSequence<MulticloudDataTransferConfig, Swift.Error> {
     let listRpc = {
       (token: Swift.String) async throws
-        -> GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferConfigsResponse in
+        -> GoogleCloudNetworkConnectivityV1.ListMulticloudDataTransferConfigsResponse in
       var request = byItem
       request.pageToken = token
       return try await self.listMulticloudDataTransferConfigs(request: request, options: options)
@@ -74,7 +74,7 @@ public class DataTransferServiceClient: Clients.DataTransferServiceProtocol {
   /// @Snippet(path: "DataTransferService_GetMulticloudDataTransferConfig")
   public func getMulticloudDataTransferConfig(
     request: GetMulticloudDataTransferConfigRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.MulticloudDataTransferConfig {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.MulticloudDataTransferConfig {
     try await self.inner.getMulticloudDataTransferConfig(request: request, options: options)
   }
 
@@ -275,7 +275,7 @@ public class DataTransferServiceClient: Clients.DataTransferServiceProtocol {
   /// @Snippet(path: "DataTransferService_ListDestinations")
   public func listDestinations(
     request: ListDestinationsRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ListDestinationsResponse {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ListDestinationsResponse {
     try await self.inner.listDestinations(request: request, options: options)
   }
 
@@ -287,7 +287,7 @@ public class DataTransferServiceClient: Clients.DataTransferServiceProtocol {
   ) throws -> any AsyncSequence<Destination, Swift.Error> {
     let listRpc = {
       (token: Swift.String) async throws
-        -> GoogleCloudNetworkconnectivityV1.ListDestinationsResponse in
+        -> GoogleCloudNetworkConnectivityV1.ListDestinationsResponse in
       var request = byItem
       request.pageToken = token
       return try await self.listDestinations(request: request, options: options)
@@ -300,7 +300,7 @@ public class DataTransferServiceClient: Clients.DataTransferServiceProtocol {
   /// @Snippet(path: "DataTransferService_GetDestination")
   public func getDestination(
     request: GetDestinationRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.Destination {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.Destination {
     try await self.inner.getDestination(request: request, options: options)
   }
 
@@ -492,7 +492,7 @@ public class DataTransferServiceClient: Clients.DataTransferServiceProtocol {
   public func getMulticloudDataTransferSupportedService(
     request: GetMulticloudDataTransferSupportedServiceRequest,
     options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.MulticloudDataTransferSupportedService {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.MulticloudDataTransferSupportedService {
     try await self.inner.getMulticloudDataTransferSupportedService(
       request: request, options: options)
   }
@@ -505,7 +505,7 @@ public class DataTransferServiceClient: Clients.DataTransferServiceProtocol {
     request: ListMulticloudDataTransferSupportedServicesRequest,
     options: GoogleCloudGax.RequestOptions
   ) async throws
-    -> GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferSupportedServicesResponse
+    -> GoogleCloudNetworkConnectivityV1.ListMulticloudDataTransferSupportedServicesResponse
   {
     try await self.inner.listMulticloudDataTransferSupportedServices(
       request: request, options: options)
@@ -521,7 +521,7 @@ public class DataTransferServiceClient: Clients.DataTransferServiceProtocol {
   ) throws -> any AsyncSequence<MulticloudDataTransferSupportedService, Swift.Error> {
     let listRpc = {
       (token: Swift.String) async throws
-        -> GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferSupportedServicesResponse in
+        -> GoogleCloudNetworkConnectivityV1.ListMulticloudDataTransferSupportedServicesResponse in
       var request = byItem
       request.pageToken = token
       return try await self.listMulticloudDataTransferSupportedServices(
@@ -672,7 +672,7 @@ extension Clients {
   public protocol DataTransferServiceProtocol {
     /// See `DataTransferServiceClient.listMulticloudDataTransferConfigs`.
     func listMulticloudDataTransferConfigs(request: ListMulticloudDataTransferConfigsRequest)
-      async throws -> GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferConfigsResponse
+      async throws -> GoogleCloudNetworkConnectivityV1.ListMulticloudDataTransferConfigsResponse
 
     /// See `DataTransferServiceClient.listMulticloudDataTransferConfigs`.
     func listMulticloudDataTransferConfigs(
@@ -686,12 +686,12 @@ extension Clients {
 
     /// See `DataTransferServiceClient.getMulticloudDataTransferConfig`.
     func getMulticloudDataTransferConfig(request: GetMulticloudDataTransferConfigRequest)
-      async throws -> GoogleCloudNetworkconnectivityV1.MulticloudDataTransferConfig
+      async throws -> GoogleCloudNetworkConnectivityV1.MulticloudDataTransferConfig
 
     /// See `DataTransferServiceClient.getMulticloudDataTransferConfig`.
     func getMulticloudDataTransferConfig(
       name: Swift.String,
-    ) async throws -> GoogleCloudNetworkconnectivityV1.MulticloudDataTransferConfig
+    ) async throws -> GoogleCloudNetworkConnectivityV1.MulticloudDataTransferConfig
 
     /// See `DataTransferServiceClient.createMulticloudDataTransferConfig`.
     func createMulticloudDataTransferConfig(request: CreateMulticloudDataTransferConfigRequest)
@@ -737,7 +737,7 @@ extension Clients {
 
     /// See `DataTransferServiceClient.listDestinations`.
     func listDestinations(request: ListDestinationsRequest) async throws
-      -> GoogleCloudNetworkconnectivityV1.ListDestinationsResponse
+      -> GoogleCloudNetworkConnectivityV1.ListDestinationsResponse
 
     /// See `DataTransferServiceClient.listDestinations`.
     func listDestinations(
@@ -751,12 +751,12 @@ extension Clients {
 
     /// See `DataTransferServiceClient.getDestination`.
     func getDestination(request: GetDestinationRequest) async throws
-      -> GoogleCloudNetworkconnectivityV1.Destination
+      -> GoogleCloudNetworkConnectivityV1.Destination
 
     /// See `DataTransferServiceClient.getDestination`.
     func getDestination(
       name: Swift.String,
-    ) async throws -> GoogleCloudNetworkconnectivityV1.Destination
+    ) async throws -> GoogleCloudNetworkConnectivityV1.Destination
 
     /// See `DataTransferServiceClient.createDestination`.
     func createDestination(request: CreateDestinationRequest) async throws
@@ -803,18 +803,18 @@ extension Clients {
     /// See `DataTransferServiceClient.getMulticloudDataTransferSupportedService`.
     func getMulticloudDataTransferSupportedService(
       request: GetMulticloudDataTransferSupportedServiceRequest
-    ) async throws -> GoogleCloudNetworkconnectivityV1.MulticloudDataTransferSupportedService
+    ) async throws -> GoogleCloudNetworkConnectivityV1.MulticloudDataTransferSupportedService
 
     /// See `DataTransferServiceClient.getMulticloudDataTransferSupportedService`.
     func getMulticloudDataTransferSupportedService(
       name: Swift.String,
-    ) async throws -> GoogleCloudNetworkconnectivityV1.MulticloudDataTransferSupportedService
+    ) async throws -> GoogleCloudNetworkConnectivityV1.MulticloudDataTransferSupportedService
 
     /// See `DataTransferServiceClient.listMulticloudDataTransferSupportedServices`.
     func listMulticloudDataTransferSupportedServices(
       request: ListMulticloudDataTransferSupportedServicesRequest
     ) async throws
-      -> GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferSupportedServicesResponse
+      -> GoogleCloudNetworkConnectivityV1.ListMulticloudDataTransferSupportedServicesResponse
 
     /// See `DataTransferServiceClient.listMulticloudDataTransferSupportedServices`.
     func listMulticloudDataTransferSupportedServices(
@@ -883,7 +883,7 @@ extension Clients {
     /// See `DataTransferServiceClient.listMulticloudDataTransferConfigs`.
     func listMulticloudDataTransferConfigs(
       request: ListMulticloudDataTransferConfigsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferConfigsResponse
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListMulticloudDataTransferConfigsResponse
 
     /// See `DataTransferServiceClient.listMulticloudDataTransferConfigs`.
     func listMulticloudDataTransferConfigs(
@@ -893,7 +893,7 @@ extension Clients {
     /// See `DataTransferServiceClient.getMulticloudDataTransferConfig`.
     func getMulticloudDataTransferConfig(
       request: GetMulticloudDataTransferConfigRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.MulticloudDataTransferConfig
+    ) async throws -> GoogleCloudNetworkConnectivityV1.MulticloudDataTransferConfig
 
     /// See `DataTransferServiceClient.createMulticloudDataTransferConfig`.
     func createMulticloudDataTransferConfig(
@@ -928,7 +928,7 @@ extension Clients {
     /// See `DataTransferServiceClient.listDestinations`.
     func listDestinations(
       request: ListDestinationsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ListDestinationsResponse
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListDestinationsResponse
 
     /// See `DataTransferServiceClient.listDestinations`.
     func listDestinations(
@@ -938,7 +938,7 @@ extension Clients {
     /// See `DataTransferServiceClient.getDestination`.
     func getDestination(
       request: GetDestinationRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.Destination
+    ) async throws -> GoogleCloudNetworkConnectivityV1.Destination
 
     /// See `DataTransferServiceClient.createDestination`.
     func createDestination(
@@ -974,14 +974,14 @@ extension Clients {
     func getMulticloudDataTransferSupportedService(
       request: GetMulticloudDataTransferSupportedServiceRequest,
       options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.MulticloudDataTransferSupportedService
+    ) async throws -> GoogleCloudNetworkConnectivityV1.MulticloudDataTransferSupportedService
 
     /// See `DataTransferServiceClient.listMulticloudDataTransferSupportedServices`.
     func listMulticloudDataTransferSupportedServices(
       request: ListMulticloudDataTransferSupportedServicesRequest,
       options: GoogleCloudGax.RequestOptions
     ) async throws
-      -> GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferSupportedServicesResponse
+      -> GoogleCloudNetworkConnectivityV1.ListMulticloudDataTransferSupportedServicesResponse
 
     /// See `DataTransferServiceClient.listMulticloudDataTransferSupportedServices`.
     func listMulticloudDataTransferSupportedServices(
@@ -1044,14 +1044,14 @@ extension Clients {
 // Default implementations
 extension Clients.DataTransferServiceProtocol {
   public func listMulticloudDataTransferConfigs(request: ListMulticloudDataTransferConfigsRequest)
-    async throws -> GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferConfigsResponse
+    async throws -> GoogleCloudNetworkConnectivityV1.ListMulticloudDataTransferConfigsResponse
   {
     try await self.listMulticloudDataTransferConfigs(request: request, options: .init())
   }
 
   public func listMulticloudDataTransferConfigs(
     request: ListMulticloudDataTransferConfigsRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferConfigsResponse {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ListMulticloudDataTransferConfigsResponse {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
@@ -1066,7 +1066,7 @@ extension Clients.DataTransferServiceProtocol {
   ) throws -> any AsyncSequence<MulticloudDataTransferConfig, Swift.Error> {
     let listRpc = {
       (token: Swift.String) async throws
-        -> GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferConfigsResponse in
+        -> GoogleCloudNetworkConnectivityV1.ListMulticloudDataTransferConfigsResponse in
       throw GoogleCloudGax.RequestError.unimplemented
     }
     return GoogleCloudGax.PaginatedResponseSequence(listRpc: listRpc)
@@ -1082,20 +1082,20 @@ extension Clients.DataTransferServiceProtocol {
   }
 
   public func getMulticloudDataTransferConfig(request: GetMulticloudDataTransferConfigRequest)
-    async throws -> GoogleCloudNetworkconnectivityV1.MulticloudDataTransferConfig
+    async throws -> GoogleCloudNetworkConnectivityV1.MulticloudDataTransferConfig
   {
     try await self.getMulticloudDataTransferConfig(request: request, options: .init())
   }
 
   public func getMulticloudDataTransferConfig(
     request: GetMulticloudDataTransferConfigRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.MulticloudDataTransferConfig {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.MulticloudDataTransferConfig {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
   public func getMulticloudDataTransferConfig(
     name: Swift.String,
-  ) async throws -> GoogleCloudNetworkconnectivityV1.MulticloudDataTransferConfig {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.MulticloudDataTransferConfig {
     let request = GetMulticloudDataTransferConfigRequest().with {
       $0.name = name
     }
@@ -1224,14 +1224,14 @@ extension Clients.DataTransferServiceProtocol {
   }
 
   public func listDestinations(request: ListDestinationsRequest) async throws
-    -> GoogleCloudNetworkconnectivityV1.ListDestinationsResponse
+    -> GoogleCloudNetworkConnectivityV1.ListDestinationsResponse
   {
     try await self.listDestinations(request: request, options: .init())
   }
 
   public func listDestinations(
     request: ListDestinationsRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ListDestinationsResponse {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ListDestinationsResponse {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
@@ -1246,7 +1246,7 @@ extension Clients.DataTransferServiceProtocol {
   ) throws -> any AsyncSequence<Destination, Swift.Error> {
     let listRpc = {
       (token: Swift.String) async throws
-        -> GoogleCloudNetworkconnectivityV1.ListDestinationsResponse in
+        -> GoogleCloudNetworkConnectivityV1.ListDestinationsResponse in
       throw GoogleCloudGax.RequestError.unimplemented
     }
     return GoogleCloudGax.PaginatedResponseSequence(listRpc: listRpc)
@@ -1262,20 +1262,20 @@ extension Clients.DataTransferServiceProtocol {
   }
 
   public func getDestination(request: GetDestinationRequest) async throws
-    -> GoogleCloudNetworkconnectivityV1.Destination
+    -> GoogleCloudNetworkConnectivityV1.Destination
   {
     try await self.getDestination(request: request, options: .init())
   }
 
   public func getDestination(
     request: GetDestinationRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.Destination {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.Destination {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
   public func getDestination(
     name: Swift.String,
-  ) async throws -> GoogleCloudNetworkconnectivityV1.Destination {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.Destination {
     let request = GetDestinationRequest().with {
       $0.name = name
     }
@@ -1401,20 +1401,20 @@ extension Clients.DataTransferServiceProtocol {
 
   public func getMulticloudDataTransferSupportedService(
     request: GetMulticloudDataTransferSupportedServiceRequest
-  ) async throws -> GoogleCloudNetworkconnectivityV1.MulticloudDataTransferSupportedService {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.MulticloudDataTransferSupportedService {
     try await self.getMulticloudDataTransferSupportedService(request: request, options: .init())
   }
 
   public func getMulticloudDataTransferSupportedService(
     request: GetMulticloudDataTransferSupportedServiceRequest,
     options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.MulticloudDataTransferSupportedService {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.MulticloudDataTransferSupportedService {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
   public func getMulticloudDataTransferSupportedService(
     name: Swift.String,
-  ) async throws -> GoogleCloudNetworkconnectivityV1.MulticloudDataTransferSupportedService {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.MulticloudDataTransferSupportedService {
     let request = GetMulticloudDataTransferSupportedServiceRequest().with {
       $0.name = name
     }
@@ -1424,7 +1424,7 @@ extension Clients.DataTransferServiceProtocol {
   public func listMulticloudDataTransferSupportedServices(
     request: ListMulticloudDataTransferSupportedServicesRequest
   ) async throws
-    -> GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferSupportedServicesResponse
+    -> GoogleCloudNetworkConnectivityV1.ListMulticloudDataTransferSupportedServicesResponse
   {
     try await self.listMulticloudDataTransferSupportedServices(request: request, options: .init())
   }
@@ -1433,7 +1433,7 @@ extension Clients.DataTransferServiceProtocol {
     request: ListMulticloudDataTransferSupportedServicesRequest,
     options: GoogleCloudGax.RequestOptions
   ) async throws
-    -> GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferSupportedServicesResponse
+    -> GoogleCloudNetworkConnectivityV1.ListMulticloudDataTransferSupportedServicesResponse
   {
     throw GoogleCloudGax.RequestError.unimplemented
   }
@@ -1450,7 +1450,7 @@ extension Clients.DataTransferServiceProtocol {
   ) throws -> any AsyncSequence<MulticloudDataTransferSupportedService, Swift.Error> {
     let listRpc = {
       (token: Swift.String) async throws
-        -> GoogleCloudNetworkconnectivityV1.ListMulticloudDataTransferSupportedServicesResponse in
+        -> GoogleCloudNetworkConnectivityV1.ListMulticloudDataTransferSupportedServicesResponse in
       throw GoogleCloudGax.RequestError.unimplemented
     }
     return GoogleCloudGax.PaginatedResponseSequence(listRpc: listRpc)

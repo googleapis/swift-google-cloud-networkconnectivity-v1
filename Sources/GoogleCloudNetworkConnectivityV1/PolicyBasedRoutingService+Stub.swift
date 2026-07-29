@@ -29,11 +29,11 @@ extension Clients {
   protocol PolicyBasedRoutingServiceStub {
     func listPolicyBasedRoutes(
       request: ListPolicyBasedRoutesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ListPolicyBasedRoutesResponse
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListPolicyBasedRoutesResponse
 
     func getPolicyBasedRoute(
       request: GetPolicyBasedRouteRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.PolicyBasedRoute
+    ) async throws -> GoogleCloudNetworkConnectivityV1.PolicyBasedRoute
 
     func createPolicyBasedRoute(
       request: CreatePolicyBasedRouteRequest, options: GoogleCloudGax.RequestOptions
@@ -90,7 +90,7 @@ extension Clients {
 
     public func listPolicyBasedRoutes(
       request: ListPolicyBasedRoutesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ListPolicyBasedRoutesResponse {
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListPolicyBasedRoutesResponse {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
@@ -110,12 +110,12 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudNetworkconnectivityV1.ListPolicyBasedRoutesResponse.self, from: data)
+        GoogleCloudNetworkConnectivityV1.ListPolicyBasedRoutesResponse.self, from: data)
     }
 
     public func getPolicyBasedRoute(
       request: GetPolicyBasedRouteRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.PolicyBasedRoute {
+    ) async throws -> GoogleCloudNetworkConnectivityV1.PolicyBasedRoute {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.name' is not set or is empty")
@@ -130,7 +130,7 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudNetworkconnectivityV1.PolicyBasedRoute.self, from: data)
+        GoogleCloudNetworkConnectivityV1.PolicyBasedRoute.self, from: data)
     }
 
     public func createPolicyBasedRoute(

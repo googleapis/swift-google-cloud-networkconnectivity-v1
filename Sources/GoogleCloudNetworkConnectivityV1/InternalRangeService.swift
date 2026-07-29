@@ -48,7 +48,7 @@ public class InternalRangeServiceClient: Clients.InternalRangeServiceProtocol {
   /// @Snippet(path: "InternalRangeService_ListInternalRanges")
   public func listInternalRanges(
     request: ListInternalRangesRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ListInternalRangesResponse {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ListInternalRangesResponse {
     try await self.inner.listInternalRanges(request: request, options: options)
   }
 
@@ -60,7 +60,7 @@ public class InternalRangeServiceClient: Clients.InternalRangeServiceProtocol {
   ) throws -> any AsyncSequence<InternalRange, Swift.Error> {
     let listRpc = {
       (token: Swift.String) async throws
-        -> GoogleCloudNetworkconnectivityV1.ListInternalRangesResponse in
+        -> GoogleCloudNetworkConnectivityV1.ListInternalRangesResponse in
       var request = byItem
       request.pageToken = token
       return try await self.listInternalRanges(request: request, options: options)
@@ -73,7 +73,7 @@ public class InternalRangeServiceClient: Clients.InternalRangeServiceProtocol {
   /// @Snippet(path: "InternalRangeService_GetInternalRange")
   public func getInternalRange(
     request: GetInternalRangeRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.InternalRange {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.InternalRange {
     try await self.inner.getInternalRange(request: request, options: options)
   }
 
@@ -400,7 +400,7 @@ extension Clients {
   public protocol InternalRangeServiceProtocol {
     /// See `InternalRangeServiceClient.listInternalRanges`.
     func listInternalRanges(request: ListInternalRangesRequest) async throws
-      -> GoogleCloudNetworkconnectivityV1.ListInternalRangesResponse
+      -> GoogleCloudNetworkConnectivityV1.ListInternalRangesResponse
 
     /// See `InternalRangeServiceClient.listInternalRanges`.
     func listInternalRanges(
@@ -414,12 +414,12 @@ extension Clients {
 
     /// See `InternalRangeServiceClient.getInternalRange`.
     func getInternalRange(request: GetInternalRangeRequest) async throws
-      -> GoogleCloudNetworkconnectivityV1.InternalRange
+      -> GoogleCloudNetworkConnectivityV1.InternalRange
 
     /// See `InternalRangeServiceClient.getInternalRange`.
     func getInternalRange(
       name: Swift.String,
-    ) async throws -> GoogleCloudNetworkconnectivityV1.InternalRange
+    ) async throws -> GoogleCloudNetworkConnectivityV1.InternalRange
 
     /// See `InternalRangeServiceClient.createInternalRange`.
     func createInternalRange(request: CreateInternalRangeRequest) async throws
@@ -520,7 +520,7 @@ extension Clients {
     /// See `InternalRangeServiceClient.listInternalRanges`.
     func listInternalRanges(
       request: ListInternalRangesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ListInternalRangesResponse
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListInternalRangesResponse
 
     /// See `InternalRangeServiceClient.listInternalRanges`.
     func listInternalRanges(
@@ -530,7 +530,7 @@ extension Clients {
     /// See `InternalRangeServiceClient.getInternalRange`.
     func getInternalRange(
       request: GetInternalRangeRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.InternalRange
+    ) async throws -> GoogleCloudNetworkConnectivityV1.InternalRange
 
     /// See `InternalRangeServiceClient.createInternalRange`.
     func createInternalRange(
@@ -617,14 +617,14 @@ extension Clients {
 // Default implementations
 extension Clients.InternalRangeServiceProtocol {
   public func listInternalRanges(request: ListInternalRangesRequest) async throws
-    -> GoogleCloudNetworkconnectivityV1.ListInternalRangesResponse
+    -> GoogleCloudNetworkConnectivityV1.ListInternalRangesResponse
   {
     try await self.listInternalRanges(request: request, options: .init())
   }
 
   public func listInternalRanges(
     request: ListInternalRangesRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ListInternalRangesResponse {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ListInternalRangesResponse {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
@@ -639,7 +639,7 @@ extension Clients.InternalRangeServiceProtocol {
   ) throws -> any AsyncSequence<InternalRange, Swift.Error> {
     let listRpc = {
       (token: Swift.String) async throws
-        -> GoogleCloudNetworkconnectivityV1.ListInternalRangesResponse in
+        -> GoogleCloudNetworkConnectivityV1.ListInternalRangesResponse in
       throw GoogleCloudGax.RequestError.unimplemented
     }
     return GoogleCloudGax.PaginatedResponseSequence(listRpc: listRpc)
@@ -655,20 +655,20 @@ extension Clients.InternalRangeServiceProtocol {
   }
 
   public func getInternalRange(request: GetInternalRangeRequest) async throws
-    -> GoogleCloudNetworkconnectivityV1.InternalRange
+    -> GoogleCloudNetworkConnectivityV1.InternalRange
   {
     try await self.getInternalRange(request: request, options: .init())
   }
 
   public func getInternalRange(
     request: GetInternalRangeRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.InternalRange {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.InternalRange {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
   public func getInternalRange(
     name: Swift.String,
-  ) async throws -> GoogleCloudNetworkconnectivityV1.InternalRange {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.InternalRange {
     let request = GetInternalRangeRequest().with {
       $0.name = name
     }

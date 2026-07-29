@@ -47,7 +47,7 @@ public class CrossNetworkAutomationServiceClient: Clients.CrossNetworkAutomation
   /// @Snippet(path: "CrossNetworkAutomationService_ListServiceConnectionMaps")
   public func listServiceConnectionMaps(
     request: ListServiceConnectionMapsRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ListServiceConnectionMapsResponse {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionMapsResponse {
     try await self.inner.listServiceConnectionMaps(request: request, options: options)
   }
 
@@ -59,7 +59,7 @@ public class CrossNetworkAutomationServiceClient: Clients.CrossNetworkAutomation
   ) throws -> any AsyncSequence<ServiceConnectionMap, Swift.Error> {
     let listRpc = {
       (token: Swift.String) async throws
-        -> GoogleCloudNetworkconnectivityV1.ListServiceConnectionMapsResponse in
+        -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionMapsResponse in
       var request = byItem
       request.pageToken = token
       return try await self.listServiceConnectionMaps(request: request, options: options)
@@ -72,7 +72,7 @@ public class CrossNetworkAutomationServiceClient: Clients.CrossNetworkAutomation
   /// @Snippet(path: "CrossNetworkAutomationService_GetServiceConnectionMap")
   public func getServiceConnectionMap(
     request: GetServiceConnectionMapRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ServiceConnectionMap {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceConnectionMap {
     try await self.inner.getServiceConnectionMap(request: request, options: options)
   }
 
@@ -264,7 +264,7 @@ public class CrossNetworkAutomationServiceClient: Clients.CrossNetworkAutomation
   /// @Snippet(path: "CrossNetworkAutomationService_ListServiceConnectionPolicies")
   public func listServiceConnectionPolicies(
     request: ListServiceConnectionPoliciesRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ListServiceConnectionPoliciesResponse {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionPoliciesResponse {
     try await self.inner.listServiceConnectionPolicies(request: request, options: options)
   }
 
@@ -276,7 +276,7 @@ public class CrossNetworkAutomationServiceClient: Clients.CrossNetworkAutomation
   ) throws -> any AsyncSequence<ServiceConnectionPolicy, Swift.Error> {
     let listRpc = {
       (token: Swift.String) async throws
-        -> GoogleCloudNetworkconnectivityV1.ListServiceConnectionPoliciesResponse in
+        -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionPoliciesResponse in
       var request = byItem
       request.pageToken = token
       return try await self.listServiceConnectionPolicies(request: request, options: options)
@@ -289,7 +289,7 @@ public class CrossNetworkAutomationServiceClient: Clients.CrossNetworkAutomation
   /// @Snippet(path: "CrossNetworkAutomationService_GetServiceConnectionPolicy")
   public func getServiceConnectionPolicy(
     request: GetServiceConnectionPolicyRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ServiceConnectionPolicy {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceConnectionPolicy {
     try await self.inner.getServiceConnectionPolicy(request: request, options: options)
   }
 
@@ -481,7 +481,7 @@ public class CrossNetworkAutomationServiceClient: Clients.CrossNetworkAutomation
   /// @Snippet(path: "CrossNetworkAutomationService_ListServiceClasses")
   public func listServiceClasses(
     request: ListServiceClassesRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ListServiceClassesResponse {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ListServiceClassesResponse {
     try await self.inner.listServiceClasses(request: request, options: options)
   }
 
@@ -493,7 +493,7 @@ public class CrossNetworkAutomationServiceClient: Clients.CrossNetworkAutomation
   ) throws -> any AsyncSequence<ServiceClass, Swift.Error> {
     let listRpc = {
       (token: Swift.String) async throws
-        -> GoogleCloudNetworkconnectivityV1.ListServiceClassesResponse in
+        -> GoogleCloudNetworkConnectivityV1.ListServiceClassesResponse in
       var request = byItem
       request.pageToken = token
       return try await self.listServiceClasses(request: request, options: options)
@@ -506,7 +506,7 @@ public class CrossNetworkAutomationServiceClient: Clients.CrossNetworkAutomation
   /// @Snippet(path: "CrossNetworkAutomationService_GetServiceClass")
   public func getServiceClass(
     request: GetServiceClassRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ServiceClass {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceClass {
     try await self.inner.getServiceClass(request: request, options: options)
   }
 
@@ -633,7 +633,7 @@ public class CrossNetworkAutomationServiceClient: Clients.CrossNetworkAutomation
   /// @Snippet(path: "CrossNetworkAutomationService_GetServiceConnectionToken")
   public func getServiceConnectionToken(
     request: GetServiceConnectionTokenRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ServiceConnectionToken {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceConnectionToken {
     try await self.inner.getServiceConnectionToken(request: request, options: options)
   }
 
@@ -642,7 +642,7 @@ public class CrossNetworkAutomationServiceClient: Clients.CrossNetworkAutomation
   /// @Snippet(path: "CrossNetworkAutomationService_ListServiceConnectionTokens")
   public func listServiceConnectionTokens(
     request: ListServiceConnectionTokensRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ListServiceConnectionTokensResponse {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionTokensResponse {
     try await self.inner.listServiceConnectionTokens(request: request, options: options)
   }
 
@@ -654,7 +654,7 @@ public class CrossNetworkAutomationServiceClient: Clients.CrossNetworkAutomation
   ) throws -> any AsyncSequence<ServiceConnectionToken, Swift.Error> {
     let listRpc = {
       (token: Swift.String) async throws
-        -> GoogleCloudNetworkconnectivityV1.ListServiceConnectionTokensResponse in
+        -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionTokensResponse in
       var request = byItem
       request.pageToken = token
       return try await self.listServiceConnectionTokens(request: request, options: options)
@@ -923,7 +923,7 @@ extension Clients {
   public protocol CrossNetworkAutomationServiceProtocol {
     /// See `CrossNetworkAutomationServiceClient.listServiceConnectionMaps`.
     func listServiceConnectionMaps(request: ListServiceConnectionMapsRequest) async throws
-      -> GoogleCloudNetworkconnectivityV1.ListServiceConnectionMapsResponse
+      -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionMapsResponse
 
     /// See `CrossNetworkAutomationServiceClient.listServiceConnectionMaps`.
     func listServiceConnectionMaps(
@@ -937,12 +937,12 @@ extension Clients {
 
     /// See `CrossNetworkAutomationServiceClient.getServiceConnectionMap`.
     func getServiceConnectionMap(request: GetServiceConnectionMapRequest) async throws
-      -> GoogleCloudNetworkconnectivityV1.ServiceConnectionMap
+      -> GoogleCloudNetworkConnectivityV1.ServiceConnectionMap
 
     /// See `CrossNetworkAutomationServiceClient.getServiceConnectionMap`.
     func getServiceConnectionMap(
       name: Swift.String,
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ServiceConnectionMap
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceConnectionMap
 
     /// See `CrossNetworkAutomationServiceClient.createServiceConnectionMap`.
     func createServiceConnectionMap(request: CreateServiceConnectionMapRequest) async throws
@@ -988,7 +988,7 @@ extension Clients {
 
     /// See `CrossNetworkAutomationServiceClient.listServiceConnectionPolicies`.
     func listServiceConnectionPolicies(request: ListServiceConnectionPoliciesRequest) async throws
-      -> GoogleCloudNetworkconnectivityV1.ListServiceConnectionPoliciesResponse
+      -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionPoliciesResponse
 
     /// See `CrossNetworkAutomationServiceClient.listServiceConnectionPolicies`.
     func listServiceConnectionPolicies(
@@ -1002,12 +1002,12 @@ extension Clients {
 
     /// See `CrossNetworkAutomationServiceClient.getServiceConnectionPolicy`.
     func getServiceConnectionPolicy(request: GetServiceConnectionPolicyRequest) async throws
-      -> GoogleCloudNetworkconnectivityV1.ServiceConnectionPolicy
+      -> GoogleCloudNetworkConnectivityV1.ServiceConnectionPolicy
 
     /// See `CrossNetworkAutomationServiceClient.getServiceConnectionPolicy`.
     func getServiceConnectionPolicy(
       name: Swift.String,
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ServiceConnectionPolicy
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceConnectionPolicy
 
     /// See `CrossNetworkAutomationServiceClient.createServiceConnectionPolicy`.
     func createServiceConnectionPolicy(request: CreateServiceConnectionPolicyRequest) async throws
@@ -1053,7 +1053,7 @@ extension Clients {
 
     /// See `CrossNetworkAutomationServiceClient.listServiceClasses`.
     func listServiceClasses(request: ListServiceClassesRequest) async throws
-      -> GoogleCloudNetworkconnectivityV1.ListServiceClassesResponse
+      -> GoogleCloudNetworkConnectivityV1.ListServiceClassesResponse
 
     /// See `CrossNetworkAutomationServiceClient.listServiceClasses`.
     func listServiceClasses(
@@ -1067,12 +1067,12 @@ extension Clients {
 
     /// See `CrossNetworkAutomationServiceClient.getServiceClass`.
     func getServiceClass(request: GetServiceClassRequest) async throws
-      -> GoogleCloudNetworkconnectivityV1.ServiceClass
+      -> GoogleCloudNetworkConnectivityV1.ServiceClass
 
     /// See `CrossNetworkAutomationServiceClient.getServiceClass`.
     func getServiceClass(
       name: Swift.String,
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ServiceClass
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceClass
 
     /// See `CrossNetworkAutomationServiceClient.updateServiceClass`.
     func updateServiceClass(request: UpdateServiceClassRequest) async throws
@@ -1103,16 +1103,16 @@ extension Clients {
 
     /// See `CrossNetworkAutomationServiceClient.getServiceConnectionToken`.
     func getServiceConnectionToken(request: GetServiceConnectionTokenRequest) async throws
-      -> GoogleCloudNetworkconnectivityV1.ServiceConnectionToken
+      -> GoogleCloudNetworkConnectivityV1.ServiceConnectionToken
 
     /// See `CrossNetworkAutomationServiceClient.getServiceConnectionToken`.
     func getServiceConnectionToken(
       name: Swift.String,
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ServiceConnectionToken
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceConnectionToken
 
     /// See `CrossNetworkAutomationServiceClient.listServiceConnectionTokens`.
     func listServiceConnectionTokens(request: ListServiceConnectionTokensRequest) async throws
-      -> GoogleCloudNetworkconnectivityV1.ListServiceConnectionTokensResponse
+      -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionTokensResponse
 
     /// See `CrossNetworkAutomationServiceClient.listServiceConnectionTokens`.
     func listServiceConnectionTokens(
@@ -1209,7 +1209,7 @@ extension Clients {
     /// See `CrossNetworkAutomationServiceClient.listServiceConnectionMaps`.
     func listServiceConnectionMaps(
       request: ListServiceConnectionMapsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ListServiceConnectionMapsResponse
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionMapsResponse
 
     /// See `CrossNetworkAutomationServiceClient.listServiceConnectionMaps`.
     func listServiceConnectionMaps(
@@ -1219,7 +1219,7 @@ extension Clients {
     /// See `CrossNetworkAutomationServiceClient.getServiceConnectionMap`.
     func getServiceConnectionMap(
       request: GetServiceConnectionMapRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ServiceConnectionMap
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceConnectionMap
 
     /// See `CrossNetworkAutomationServiceClient.createServiceConnectionMap`.
     func createServiceConnectionMap(
@@ -1254,7 +1254,7 @@ extension Clients {
     /// See `CrossNetworkAutomationServiceClient.listServiceConnectionPolicies`.
     func listServiceConnectionPolicies(
       request: ListServiceConnectionPoliciesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ListServiceConnectionPoliciesResponse
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionPoliciesResponse
 
     /// See `CrossNetworkAutomationServiceClient.listServiceConnectionPolicies`.
     func listServiceConnectionPolicies(
@@ -1264,7 +1264,7 @@ extension Clients {
     /// See `CrossNetworkAutomationServiceClient.getServiceConnectionPolicy`.
     func getServiceConnectionPolicy(
       request: GetServiceConnectionPolicyRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ServiceConnectionPolicy
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceConnectionPolicy
 
     /// See `CrossNetworkAutomationServiceClient.createServiceConnectionPolicy`.
     func createServiceConnectionPolicy(
@@ -1299,7 +1299,7 @@ extension Clients {
     /// See `CrossNetworkAutomationServiceClient.listServiceClasses`.
     func listServiceClasses(
       request: ListServiceClassesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ListServiceClassesResponse
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListServiceClassesResponse
 
     /// See `CrossNetworkAutomationServiceClient.listServiceClasses`.
     func listServiceClasses(
@@ -1309,7 +1309,7 @@ extension Clients {
     /// See `CrossNetworkAutomationServiceClient.getServiceClass`.
     func getServiceClass(
       request: GetServiceClassRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ServiceClass
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceClass
 
     /// See `CrossNetworkAutomationServiceClient.updateServiceClass`.
     func updateServiceClass(
@@ -1334,12 +1334,12 @@ extension Clients {
     /// See `CrossNetworkAutomationServiceClient.getServiceConnectionToken`.
     func getServiceConnectionToken(
       request: GetServiceConnectionTokenRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ServiceConnectionToken
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceConnectionToken
 
     /// See `CrossNetworkAutomationServiceClient.listServiceConnectionTokens`.
     func listServiceConnectionTokens(
       request: ListServiceConnectionTokensRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudNetworkconnectivityV1.ListServiceConnectionTokensResponse
+    ) async throws -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionTokensResponse
 
     /// See `CrossNetworkAutomationServiceClient.listServiceConnectionTokens`.
     func listServiceConnectionTokens(
@@ -1421,14 +1421,14 @@ extension Clients {
 // Default implementations
 extension Clients.CrossNetworkAutomationServiceProtocol {
   public func listServiceConnectionMaps(request: ListServiceConnectionMapsRequest) async throws
-    -> GoogleCloudNetworkconnectivityV1.ListServiceConnectionMapsResponse
+    -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionMapsResponse
   {
     try await self.listServiceConnectionMaps(request: request, options: .init())
   }
 
   public func listServiceConnectionMaps(
     request: ListServiceConnectionMapsRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ListServiceConnectionMapsResponse {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionMapsResponse {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
@@ -1443,7 +1443,7 @@ extension Clients.CrossNetworkAutomationServiceProtocol {
   ) throws -> any AsyncSequence<ServiceConnectionMap, Swift.Error> {
     let listRpc = {
       (token: Swift.String) async throws
-        -> GoogleCloudNetworkconnectivityV1.ListServiceConnectionMapsResponse in
+        -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionMapsResponse in
       throw GoogleCloudGax.RequestError.unimplemented
     }
     return GoogleCloudGax.PaginatedResponseSequence(listRpc: listRpc)
@@ -1459,20 +1459,20 @@ extension Clients.CrossNetworkAutomationServiceProtocol {
   }
 
   public func getServiceConnectionMap(request: GetServiceConnectionMapRequest) async throws
-    -> GoogleCloudNetworkconnectivityV1.ServiceConnectionMap
+    -> GoogleCloudNetworkConnectivityV1.ServiceConnectionMap
   {
     try await self.getServiceConnectionMap(request: request, options: .init())
   }
 
   public func getServiceConnectionMap(
     request: GetServiceConnectionMapRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ServiceConnectionMap {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceConnectionMap {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
   public func getServiceConnectionMap(
     name: Swift.String,
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ServiceConnectionMap {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceConnectionMap {
     let request = GetServiceConnectionMapRequest().with {
       $0.name = name
     }
@@ -1599,14 +1599,14 @@ extension Clients.CrossNetworkAutomationServiceProtocol {
   }
 
   public func listServiceConnectionPolicies(request: ListServiceConnectionPoliciesRequest)
-    async throws -> GoogleCloudNetworkconnectivityV1.ListServiceConnectionPoliciesResponse
+    async throws -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionPoliciesResponse
   {
     try await self.listServiceConnectionPolicies(request: request, options: .init())
   }
 
   public func listServiceConnectionPolicies(
     request: ListServiceConnectionPoliciesRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ListServiceConnectionPoliciesResponse {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionPoliciesResponse {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
@@ -1621,7 +1621,7 @@ extension Clients.CrossNetworkAutomationServiceProtocol {
   ) throws -> any AsyncSequence<ServiceConnectionPolicy, Swift.Error> {
     let listRpc = {
       (token: Swift.String) async throws
-        -> GoogleCloudNetworkconnectivityV1.ListServiceConnectionPoliciesResponse in
+        -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionPoliciesResponse in
       throw GoogleCloudGax.RequestError.unimplemented
     }
     return GoogleCloudGax.PaginatedResponseSequence(listRpc: listRpc)
@@ -1637,20 +1637,20 @@ extension Clients.CrossNetworkAutomationServiceProtocol {
   }
 
   public func getServiceConnectionPolicy(request: GetServiceConnectionPolicyRequest) async throws
-    -> GoogleCloudNetworkconnectivityV1.ServiceConnectionPolicy
+    -> GoogleCloudNetworkConnectivityV1.ServiceConnectionPolicy
   {
     try await self.getServiceConnectionPolicy(request: request, options: .init())
   }
 
   public func getServiceConnectionPolicy(
     request: GetServiceConnectionPolicyRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ServiceConnectionPolicy {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceConnectionPolicy {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
   public func getServiceConnectionPolicy(
     name: Swift.String,
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ServiceConnectionPolicy {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceConnectionPolicy {
     let request = GetServiceConnectionPolicyRequest().with {
       $0.name = name
     }
@@ -1777,14 +1777,14 @@ extension Clients.CrossNetworkAutomationServiceProtocol {
   }
 
   public func listServiceClasses(request: ListServiceClassesRequest) async throws
-    -> GoogleCloudNetworkconnectivityV1.ListServiceClassesResponse
+    -> GoogleCloudNetworkConnectivityV1.ListServiceClassesResponse
   {
     try await self.listServiceClasses(request: request, options: .init())
   }
 
   public func listServiceClasses(
     request: ListServiceClassesRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ListServiceClassesResponse {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ListServiceClassesResponse {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
@@ -1799,7 +1799,7 @@ extension Clients.CrossNetworkAutomationServiceProtocol {
   ) throws -> any AsyncSequence<ServiceClass, Swift.Error> {
     let listRpc = {
       (token: Swift.String) async throws
-        -> GoogleCloudNetworkconnectivityV1.ListServiceClassesResponse in
+        -> GoogleCloudNetworkConnectivityV1.ListServiceClassesResponse in
       throw GoogleCloudGax.RequestError.unimplemented
     }
     return GoogleCloudGax.PaginatedResponseSequence(listRpc: listRpc)
@@ -1815,20 +1815,20 @@ extension Clients.CrossNetworkAutomationServiceProtocol {
   }
 
   public func getServiceClass(request: GetServiceClassRequest) async throws
-    -> GoogleCloudNetworkconnectivityV1.ServiceClass
+    -> GoogleCloudNetworkConnectivityV1.ServiceClass
   {
     try await self.getServiceClass(request: request, options: .init())
   }
 
   public func getServiceClass(
     request: GetServiceClassRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ServiceClass {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceClass {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
   public func getServiceClass(
     name: Swift.String,
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ServiceClass {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceClass {
     let request = GetServiceClassRequest().with {
       $0.name = name
     }
@@ -1912,20 +1912,20 @@ extension Clients.CrossNetworkAutomationServiceProtocol {
   }
 
   public func getServiceConnectionToken(request: GetServiceConnectionTokenRequest) async throws
-    -> GoogleCloudNetworkconnectivityV1.ServiceConnectionToken
+    -> GoogleCloudNetworkConnectivityV1.ServiceConnectionToken
   {
     try await self.getServiceConnectionToken(request: request, options: .init())
   }
 
   public func getServiceConnectionToken(
     request: GetServiceConnectionTokenRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ServiceConnectionToken {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceConnectionToken {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
   public func getServiceConnectionToken(
     name: Swift.String,
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ServiceConnectionToken {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ServiceConnectionToken {
     let request = GetServiceConnectionTokenRequest().with {
       $0.name = name
     }
@@ -1933,14 +1933,14 @@ extension Clients.CrossNetworkAutomationServiceProtocol {
   }
 
   public func listServiceConnectionTokens(request: ListServiceConnectionTokensRequest) async throws
-    -> GoogleCloudNetworkconnectivityV1.ListServiceConnectionTokensResponse
+    -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionTokensResponse
   {
     try await self.listServiceConnectionTokens(request: request, options: .init())
   }
 
   public func listServiceConnectionTokens(
     request: ListServiceConnectionTokensRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudNetworkconnectivityV1.ListServiceConnectionTokensResponse {
+  ) async throws -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionTokensResponse {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
@@ -1955,7 +1955,7 @@ extension Clients.CrossNetworkAutomationServiceProtocol {
   ) throws -> any AsyncSequence<ServiceConnectionToken, Swift.Error> {
     let listRpc = {
       (token: Swift.String) async throws
-        -> GoogleCloudNetworkconnectivityV1.ListServiceConnectionTokensResponse in
+        -> GoogleCloudNetworkConnectivityV1.ListServiceConnectionTokensResponse in
       throw GoogleCloudGax.RequestError.unimplemented
     }
     return GoogleCloudGax.PaginatedResponseSequence(listRpc: listRpc)
